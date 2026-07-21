@@ -180,21 +180,19 @@ class Pokemon:
 
     def extra_damage(self):
         inputAssured = True
-        
+       
         while inputAssured:
             try:
-                user = int(input(f"1. Normal Pokemon\n2. Special Pokemon"))
+                user = int(input(f"1. Normal Pokemon\n2. Special Pokemon\nSelect 1 or 2: "))
                 inputAssured = False
 
                 if user > 2 or user < 1:
                     print("Enter 1 or 2")
                     inputAssured = True
-
             except Exception:
-                print("Invalid input. Enter 1 or 2.")
+                "Invalid input. Enter 1 or 2."
                 inputAssured = True
-
-                
+               
         inputAssured = True
 
         if user == 1:
@@ -214,25 +212,27 @@ class Pokemon:
 
                 except Exception:
                     print("Invalid input. Select a number (1-3).")
-                    inputAssurd = True
+                    inputAssured = True
 
             if stage == 1:
-                return 0
-            
+                damage_bonus = 0
+           
             elif stage == 2:
-                return 1
-
+                damage_bonus = 1
+            
             else:
-                return 2
-            
+                damage_bonus = 2
+           
         inputAssured = True
-            
+           
         if user == 2:
+            
             print(f"\t1. Mystical/Mega")
             print(f"\t2. Legendary")
             print(f"\t3. Legendary Mega")
-            
+           
             while inputAssured:
+                
                 try:
                     stage = int(input(f"Select the stage: "))
                     inputAssured = False
@@ -243,16 +243,21 @@ class Pokemon:
 
                 except Exception:
                     print("Invalid input. Select a number (1-3).")
-                    inputAssurd = True
+                    inputAssured = True
 
             if stage == 1:
-                return 3
-            
+                damage_bonus = 3
+           
             elif stage == 2:
-                return 4
+                damage_bonus = 4
 
             else:
-                return 5   
+                damage_bonus = 5   
+            
+        if self.do_you_accept_changes():
+            return damage_bonus
+        else:
+            return -1   
 
     def determine_move(self):
 
@@ -279,29 +284,34 @@ class Pokemon:
                 brain_dice = str(input("What brain dice do you possess? "))
                 if brain_dice.lower() == "d4":
                     inputAssured = False
-                    return 5
+                    moves = 5
                 elif brain_dice.lower() == "d6":
                     inputAssured = False 
-                    return 6
+                    moves = 6
                 elif brain_dice.lower() == "d8":
                     inputAssured = False
-                    return 7
+                    moves = 7
                 elif brain_dice.lower() == "d10":
                     inputAssured = False
-                    return 8
+                    moves = 8
                 elif brain_dice.lower() == "d12":
                     inputAssured = False
-                    return 9
+                    moves = 9
                 elif brain_dice.lower() == "d20":
                     inputAssured = False
-                    return 10
+                    moves = 10
                 else:
                     print("Invalid input. Try again")
                     inputAssured = True
 
 
         else: #if the user chooses a special pokemon
-            return 20
+            moves = 20
+            
+        if self.do_you_accept_changes():
+            return moves
+        else:
+            return -1
  
 
 
