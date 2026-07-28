@@ -11,7 +11,7 @@ import json
 
 # Dynamically find the folder where the .exe resides
 exe_dir = os.path.dirname(sys.executable)
-exe_dir = exe_dir + "\\_internal" ## If your exporting the exe. Comment out for IDE Testing
+#exe_dir = exe_dir + "\\_internal" ## If your exporting the exe. Comment out for IDE Testing
 
 digimon_file_path = os.path.join(exe_dir, "digimon_sheets.json")
 pokemon_file_path = os.path.join(exe_dir, "pokemon_sheets.json")
@@ -391,23 +391,6 @@ def build_a_sheet(character_type, build = False): ## Setting a default value mak
 
     #### Run this if the characters a Pokemon ####
     if character_type == "Pokemon":
-        #character_name = input("Enter the Pokemon's name: ") ## Get the characters name
-        #print("Opening Pokedex...")
-        #time.sleep(1)
-
-
-
-
-        #webbrowser.open("https://pokemondb.net/pokedex/"+character_name) ## Open the Pokemons Pokedex page
-
-        #test_pokemon = Pokemon("Eevee")
-        #test_pokemon.determine_hp()
-        #test_pokemon.evolution()
-        #test_pokemon.determine_move()
-        ### And Pokemon Creation Submenu
-        #clear_terminal()
-       
-
 
         ## Doing a Try...Except to assure input
         while True:
@@ -417,7 +400,7 @@ def build_a_sheet(character_type, build = False): ## Setting a default value mak
             else:
                 print(f"Modifying character sheet for {character_used.name}")
             
-            print("\t1. Calculate Lvl 1 HP")
+            print("\t1. Calculate HP")
             print("\t2. Find D20")
             print("\t3. Select Stats")
             print("\t4. Add +1's")
@@ -433,7 +416,7 @@ def build_a_sheet(character_type, build = False): ## Setting a default value mak
                 selection = int(input("Selection: "))
             
                 if (selection < 1 or selection > 6):
-                    print(5/0) ## Trigger the catch
+                    print(5/0) ## Trigger the catch 
             
                 break
 
@@ -514,7 +497,7 @@ def build_a_sheet(character_type, build = False): ## Setting a default value mak
             else:
                 print(f"Modifying character sheet for {character_used.name}")
             
-            print("\t1. Calculate Lvl 1 HP")
+            print("\t1. Calculate HP")
             print("\t2. Select Stats")
             print("\t3. Add +1's")
             print("\t4. Select Stage")
@@ -705,7 +688,7 @@ load()
 main_menu(True)
 save()
 
-time.sleep(25)
+#time.sleep(25)
 
 #print(digimon_file_path)
 #print(pokemon_file_path)

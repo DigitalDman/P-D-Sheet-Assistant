@@ -176,10 +176,10 @@ class Digimon:
         return new_hp_stat
 
 
-    def calculate_health(self, created_rookie):
+    def calculate_health(self):
         calculated_hp = self.stage_index + 1 + self.increase_health(False,self.level)
 
-        print(f"The calculated HP for {self.name} is {calculate_health}")
+        print(f"The calculated HP for {self.name} is {calculated_hp}")
 
         inputAssured = True
         

@@ -419,7 +419,7 @@ class Pokemon:
         self.clear_terminal() ## Confirm what changes are made
         print("Changes made")
         print(f"New HP Stat: {new_hp_stat}")
-        print(f"New Stage: {self.stage[new_stage_index]}")
+        print(f"New Stage: {new_stage}")
 
         print("\nNew Modifiers")
         for key in new_modifiers:
